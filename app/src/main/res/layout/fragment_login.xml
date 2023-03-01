@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="290dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_back"
+        android:textSize="26sp"
+        android:fontFamily="@font/montserrat_600"
+        android:textColor="@color/title"
+        android:textAlignment="center"
+        android:layout_marginBottom="70dp"
+        />
+
+    <EditText
+        android:id="@+id/edt_first_name"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:hint="@string/first_name"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_500"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_text_input"
+        android:inputType="text"
+        android:layout_marginBottom="35dp"
+        android:importantForAutofill="no"
+        />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:hint="@string/password"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat_500"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_text_input"
+        android:inputType="textPassword"
+        android:layout_marginBottom="99dp"
+        android:importantForAutofill="no"
+        />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@android:style/Widget.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_blue_button"
+        android:textColor="@color/btn_text"
+        android:text="@string/login"
+        android:fontFamily="@font/montserrat_700"
+        android:textSize="14sp"
+        android:layout_marginBottom="15dp"
+        />
+
+</LinearLayout>
