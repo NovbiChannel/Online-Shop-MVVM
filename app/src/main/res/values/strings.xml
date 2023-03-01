@@ -50,4 +50,7 @@
     <string name="_22_50">$ 22,50</string>
     <string name="star">Star</string>
     <string name="color">Color:</string>
+    <string name="trade_by_bata">Trade by bata</string>
+    <string name="location">Location</string>
+    <string name="arrow_bottom">Arrow bottom</string>
 </resources>
