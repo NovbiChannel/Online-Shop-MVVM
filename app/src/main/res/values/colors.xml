@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#CDCBC7</color>
+    <color name="blue_btn">#4E55D7</color>
+    <color name="btn_text">#EAEAEA</color>
+    <color name="gray_edt">#E8E8E8</color>
+    <color name="circle_background">#EEEFF4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="widget_background">#E5E9EF</color>
+    <color name="hint">#7B7B7B</color>
+    <color name="hint_search">#5B5B5B</color>
+    <color name="category_banner">#C4C4C4D9</color>
+    <color name="link">#254FE6</color>
+    <color name="text_info">#808080</color>
+    <color name="text_title2">#737373</color>
+    <color name="title">#161826</color>
+    <color name="black">#000000</color>
+    <color name="text_color">#040402</color>
+    <color name="user_name">#3F3F3F</color>
+    <color name="red">#F93A3A</color>
+</resources>

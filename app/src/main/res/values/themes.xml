@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.OnlineShop" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_btn</item>
+        <item name="colorPrimaryVariant">@color/blue_btn</item>
+        <item name="colorOnPrimary">@color/text_color</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_btn</item>
+        <item name="colorSecondaryVariant">@color/blue_btn</item>
+        <item name="colorOnSecondary">@color/text_color</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/background_color</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
