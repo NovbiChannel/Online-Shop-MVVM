@@ -16,8 +16,6 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/shape_avatar"
         android:scaleType="centerCrop"
-        app:civ_border_color="#ffffff"
-        app:civ_border_width="3dp"
         android:contentDescription="@string/user_avatar" />
 
     <TextView
