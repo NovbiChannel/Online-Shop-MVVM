@@ -53,4 +53,8 @@
     <string name="trade_by_bata">Trade by bata</string>
     <string name="location">Location</string>
     <string name="arrow_bottom">Arrow bottom</string>
+    <string name="main">Main</string>
+    <string name="favorites">Favorites</string>
+    <string name="basket">Basket</string>
+    <string name="messages">Messages</string>
 </resources>

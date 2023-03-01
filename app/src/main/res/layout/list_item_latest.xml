@@ -7,7 +7,15 @@
     android:layout_height="149dp"
     app:cardElevation="0dp"
     android:layout_marginStart="12dp"
+    app:cardCornerRadius="9dp"
     >
+    <ImageView
+        android:id="@+id/latest_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,6 +28,7 @@
         >
         
         <TextView
+            android:id="@+id/tv_category"
             android:layout_width="35dp"
             android:layout_height="12dp"
             android:background="@drawable/shape_category_banner_r5"
@@ -31,6 +40,7 @@
             tools:ignore="SmallSp" />
 
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/samsung_s10"
@@ -48,6 +58,7 @@
             >
 
             <TextView
+                android:id="@+id/tv_price"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
