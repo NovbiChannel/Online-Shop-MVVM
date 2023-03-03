@@ -4,6 +4,9 @@ import com.example.onlineshop.data.api.MockyApi
 import com.example.onlineshop.data.repository.ProductRepositoryImpl
 import com.example.onlineshop.domain.repository.ProductRepository
 import com.example.onlineshop.other.Constant.BASE_URL
+import com.example.onlineshop.other.Constant.DEFAULT_WEB_CLIENT_ID
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
