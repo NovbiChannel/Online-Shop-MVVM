@@ -7,6 +7,10 @@ import com.example.onlineshop.R
 import com.example.onlineshop.databinding.ActivityMainBinding
 import com.example.onlineshop.ui.fragments.Page1Fragment
 import com.example.onlineshop.ui.fragments.ProfileFragment
+import com.example.onlineshop.ui.fragments.SignInFragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,10 +22,12 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val page1Fragment = Page1Fragment()
         val profileFragment = ProfileFragment()
+        val signInFragment = SignInFragment()
 
-        setCurrentFragment(page1Fragment)
+        setCurrentFragment(signInFragment)
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId) {
