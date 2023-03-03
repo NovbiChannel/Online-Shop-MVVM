@@ -1,6 +1,8 @@
 package com.example.onlineshop.data.di
 
 import com.example.onlineshop.data.api.MockyApi
+import com.example.onlineshop.data.repository.ProductRepositoryImpl
+import com.example.onlineshop.domain.repository.ProductRepository
 import com.example.onlineshop.other.Constant.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -38,4 +40,10 @@ object AppModule {
             .client(okHttpClient())
             .build()
             .create(MockyApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideRepository(api: MockyApi): ProductRepository {
+        return ProductRepositoryImpl(api)
+    }
 }

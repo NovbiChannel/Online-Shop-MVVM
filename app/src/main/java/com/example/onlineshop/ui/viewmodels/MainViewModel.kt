@@ -1,11 +1,12 @@
 package com.example.onlineshop.ui.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.onlineshop.data.CategorySource
 import com.example.onlineshop.data.models.*
-import com.example.onlineshop.data.repository.ProductRepository
+import com.example.onlineshop.domain.repository.ProductRepository
 import com.example.onlineshop.other.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -30,10 +31,9 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             latestLiveData.postValue(Resource.Loading())
             val response = repository.getLatest()
+            Log.d("MyLog", "getLatest: ${response.body()}")
             if (response.isSuccessful) {
-                response.body().let { res ->
-                    latestLiveData.postValue(Resource.Success(data = res))
-                }
+                latestLiveData.postValue(Resource.Success(data = response.body()))
             } else {
                 latestLiveData.postValue(Resource.Error(message = response.message()))
             }
@@ -43,10 +43,9 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             flashSaleLiveData.postValue(Resource.Loading())
             val response = repository.getFlashSale()
+            Log.d("MyLog", "getFlashSale: ${response.body()}")
             if (response.isSuccessful) {
-                response.body().let { res ->
-                    flashSaleLiveData.postValue(Resource.Success(data = res))
-                }
+                flashSaleLiveData.postValue(Resource.Success(data = response.body()))
             } else {
                 flashSaleLiveData.postValue(Resource.Error(message = response.message()))
             }

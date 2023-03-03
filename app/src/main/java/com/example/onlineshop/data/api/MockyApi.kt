@@ -1,10 +1,6 @@
 package com.example.onlineshop.data.api
 
-import android.telecom.Call
-import com.example.onlineshop.data.models.FlashSale
-import com.example.onlineshop.data.models.FlashSaleResponse
-import com.example.onlineshop.data.models.Latest
-import com.example.onlineshop.data.models.LatestResponse
+import com.example.onlineshop.data.models.*
 import retrofit2.Response
 import retrofit2.http.GET
 
