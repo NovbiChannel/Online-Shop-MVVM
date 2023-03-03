@@ -11,11 +11,11 @@ import com.bumptech.glide.Glide
 import com.example.onlineshop.data.models.Latest
 import com.example.onlineshop.databinding.ListItemLatestBinding
 
-class LatestAdapter: ListAdapter<Latest, LatestAdapter.LatestViewHolder>(DiffCallback) {
+class BrandsAdapter: ListAdapter<Latest, BrandsAdapter.BrandsViewHolder>(DiffCallback) {
 
     private lateinit var context: Context
 
-    class LatestViewHolder(private var binding: ListItemLatestBinding
+    class BrandsViewHolder(private var binding: ListItemLatestBinding
     ): RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("SetTextI18n")
@@ -38,16 +38,16 @@ class LatestAdapter: ListAdapter<Latest, LatestAdapter.LatestViewHolder>(DiffCal
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LatestAdapter.LatestViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BrandsAdapter.BrandsViewHolder {
         context = parent.context
-        return LatestAdapter.LatestViewHolder(
+        return BrandsAdapter.BrandsViewHolder(
             ListItemLatestBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )
     }
 
-    override fun onBindViewHolder(holder: LatestAdapter.LatestViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BrandsAdapter.BrandsViewHolder, position: Int) {
         val current = getItem(position)
 //        holder.itemView.setOnClickListener {
 //

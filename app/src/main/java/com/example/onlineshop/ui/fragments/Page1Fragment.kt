@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.onlineshop.databinding.FragmentPage1Binding
 import com.example.onlineshop.other.Resource
+import com.example.onlineshop.ui.adapters.BrandsAdapter
 import com.example.onlineshop.ui.adapters.CategoryAdapter
 import com.example.onlineshop.ui.adapters.FlashSaleAdapter
 import com.example.onlineshop.ui.adapters.LatestAdapter
@@ -33,6 +34,7 @@ class Page1Fragment: Fragment() {
     lateinit var latestAdapter: LatestAdapter
     lateinit var flashSaleAdapter: FlashSaleAdapter
     lateinit var categoryAdapter: CategoryAdapter
+    lateinit var brandsAdapter: BrandsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,20 +49,20 @@ class Page1Fragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
 
-        latestAdapter.setOnItemClickListener {
-            activity?.supportFragmentManager?.beginTransaction()?.apply {
-                val page2Fragment = Page2Fragment()
-                replace(R.id.flFragment, page2Fragment)
-                commit()
-            }
-        }
+//        latestAdapter.setOnItemClickListener {
+//            activity?.supportFragmentManager?.beginTransaction()?.apply {
+//                val page2Fragment = Page2Fragment()
+//                replace(R.id.flFragment, page2Fragment)
+//                commit()
+//            }
+//        }
 
         viewModel.latestLiveData.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Success -> {
                     response.data?.let {
-                        latestAdapter.differ.submitList(it.latest)
-                        Log.d("Fragment", "Resource: ${it.latest}")
+                        latestAdapter.submitList(it.latest)
+                        brandsAdapter.submitList(it.latest)
                     }
                 }
                 is Resource.Error -> {
@@ -73,12 +75,11 @@ class Page1Fragment: Fragment() {
         }
 
         viewModel.flashSaleLiveData.observe(viewLifecycleOwner) { response ->
-            Log.d("Response", "Response for flash sale: ${response.data?.flashSale}")
+            Log.d("Response", "Response for flash sale: ${response.data?.flash_sale}")
             when (response) {
                 is Resource.Success -> {
                     response.data?.let {
-                        flashSaleAdapter.differ.submitList(it.flashSale)
-                        Log.d("Fragment", "Resource: ${it.flashSale}")
+                        flashSaleAdapter.submitList(it.flash_sale)
                     }
                 }
                 is Resource.Error -> {
@@ -90,8 +91,8 @@ class Page1Fragment: Fragment() {
             }
         }
 
-        viewModel.categoryLiveData.observe(viewLifecycleOwner) { responce ->
-            categoryAdapter.submitList(responce)
+        viewModel.categoryLiveData.observe(viewLifecycleOwner) { response ->
+            categoryAdapter.submitList(response)
         }
     }
 
@@ -99,18 +100,19 @@ class Page1Fragment: Fragment() {
         latestAdapter = LatestAdapter()
         flashSaleAdapter = FlashSaleAdapter()
         categoryAdapter = CategoryAdapter()
+        brandsAdapter = BrandsAdapter()
 
         binding.rvLatest.apply {
             adapter = latestAdapter
-            Log.d("Latest adapter", "init")
         }
         binding.rvFlashSale.apply {
             adapter = flashSaleAdapter
-            Log.d("Flash sale adapter", "init")
+        }
+        binding.rvBrands.apply {
+            adapter = brandsAdapter
         }
         binding.rvCategories.apply {
             adapter = categoryAdapter
-            Log.d("Category adapter", "init")
         }
     }
 }

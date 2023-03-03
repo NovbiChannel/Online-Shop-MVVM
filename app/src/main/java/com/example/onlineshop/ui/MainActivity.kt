@@ -1,17 +1,13 @@
-package com.example.onlineshop
+package com.example.onlineshop.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.onlineshop.R
 import com.example.onlineshop.databinding.ActivityMainBinding
 import com.example.onlineshop.ui.fragments.Page1Fragment
-import com.example.onlineshop.ui.fragments.Page2Fragment
 import com.example.onlineshop.ui.fragments.ProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
